@@ -32,3 +32,10 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'SecureMultiCloud (46f20b79-9fea-4656-a373-a64451d8ce86)'
+    appType: 'webApp'
+    WebAppName: 'SAMLExampleApp'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
